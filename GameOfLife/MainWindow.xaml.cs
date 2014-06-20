@@ -29,21 +29,26 @@ namespace GameOfLife
 
         public MainWindow()
         {
-            InitializeComponent();
+            Initializ Component();
             Random random = new Random();
-            for (int i = 0; i < 100; i++)
-                for (int j = 0; j < 100; j++)
-                {
-                    if (random.Next(5) < 1)
-                    {
-                        _universe.Add(new Cell(i, j));
-                    }
-                }
-            //_universe.Add(new Cell() { Address = new Address(2, 1) });
-            //_universe.Add(new Cell() { Address = new Address(3, 2) });
-            //_universe.Add(new Cell() { Address = new Address(1, 3) });
-            //_universe.Add(new Cell() { Address = new Address(2, 3) });
-            //_universe.Add(new Cell() { Address = new Address(3, 3) });
+			
+            //Random random = new Random();
+            //for (int i = 0; i < 100; i++)
+            //    for (int j = 0; j < 100; j++)
+            //    {
+            //        if (random.Next(5) < 1)
+            //        {
+            //            _universe.Add(new Cell(i, j));
+            //        }
+            //    }
+
+            //space gun
+            _universe.Add(new Cell(2, 1));
+            _universe.Add(new Cell(3, 2));
+            _universe.Add(new Cell(1, 3));
+            _universe.Add(new Cell(2, 3));
+            _universe.Add(new Cell(3, 3));			
+			
             _timer.Elapsed += _timer_Elapsed;
             _timer.Interval = 500;
             RefeshUIWithCell();
